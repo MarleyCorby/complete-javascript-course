@@ -8,14 +8,14 @@ console.log(btnsOpenModal);
 
 
     //button functionality on modal and on x onClick
+const showModal = function(){
+    modal.classList.remove('hidden');
+    overlay.classList.remove('hidden')
+}
 for (let i =0; i < btnsOpenModal.length; i++)
-console.log(btnsOpenModal[i].addEventListener
-    ('click', function(){
-        modal.classList.remove('hidden');
-        overlay.classList.remove('hidden')
-    }))
+console.log(btnsOpenModal[i].addEventListener('click', showModal))
 
-    const closeModal = function(){
+const closeModal = function(){
         modal.classList.add('hidden');
         overlay.classList.add('hidden');
     }
