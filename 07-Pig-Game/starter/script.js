@@ -11,7 +11,8 @@ const btnHold = document.querySelector('.btn--hold');
 
 let currentScore = 0;
 let activePlayer = 0;
-//set scores to 0
+
+const scores = [0, 0];
 score0El.textContent = 0;
 score1El.textContent = 0;
 
@@ -49,5 +50,14 @@ btnRoll.addEventListener('click', function () {
 btnHold.addEventListener('click', function () {
   //onclicik currentScore = score--1 or score--0
   console.log('hold was pressed');
+  //1. Add currentScore to the score of the activePlayer
+  document.getElementById(`current--${activePlayer}`).textContent = scores[
+    activePlayer
+  ] += currentScore;
+  //scores[1] = scores[1] + currentScore
   score0El.textContent = currentScore;
+  //2. Check if the score is >= 100
+  //3. finish the game
+
+  //4. Switch to the next player
 });
