@@ -9,14 +9,13 @@ const score = document.querySelector('.score');
 
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
+const btnNew = document.querySelector('.btn--new');
 
 let currentScore = 0;
 let activePlayer = 0;
 let playing = true;
 
 const scores = [0, 0];
-score0El.textContent = 0;
-score1El.textContent = 0;
 
 function switchToNext() {
   document.getElementById(`current--${activePlayer}`).textContent = 0;
@@ -69,7 +68,6 @@ btnHold.addEventListener('click', function () {
 
     if (scores[activePlayer] >= 20) {
       //3. finish the game
-      console.log('maybe reset the game?');
       playing = false;
       diceEl.classList.add('hidden');
       document
@@ -83,4 +81,14 @@ btnHold.addEventListener('click', function () {
       //4. Switch to the next player
     }
   }
+});
+
+btnNew.addEventListener('click', function () {
+  console.log('reseting the game');
+  document.querySelector(`current--${activePlayer}`).textContent = curr;
+  activePlayer = 0;
+  playing = true;
+
+  score0El.textContent = 0;
+  score1El.textContent = 0;
 });
